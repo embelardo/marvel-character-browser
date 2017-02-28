@@ -1,0 +1,12 @@
+# logs
+logs
+*.log
+
+# java cls files
+*.class
+
+# maven target dir
+target
+
+# apikeys prop file
+apikeys.properties

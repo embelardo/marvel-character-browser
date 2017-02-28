@@ -1,0 +1,22 @@
+# top-most editorconfig file
+root = true
+
+[*]
+
+# file char encoding
+charset=utf-8
+
+# line ending file format (unix, dos, mac)
+end_of_line=crlf
+
+# indentation size (in single-spaced chars)
+indent_size=4
+
+# indentation style
+indent_style=space
+
+# denotes whether file should end w newline
+insert_final_newline=false
+
+# denotes whether whitespace is allowed at end of lines
+trim_trailing_whitespace = true

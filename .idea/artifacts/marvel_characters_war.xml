@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="marvel-characters:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="marvel-characters-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="marvel-characters:war exploded" />
+    </root>
+  </artifact>
+</component>
