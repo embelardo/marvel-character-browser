@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
+@SuppressWarnings("unused")
 @RestController
 public class HomeController {
     private static final String PUBLIC_KEY = "c1b04f647f9b8b84cbfe8098c505748c";
