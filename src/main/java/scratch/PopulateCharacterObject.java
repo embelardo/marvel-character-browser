@@ -1,6 +1,6 @@
 package scratch;
 
-import marvel.Character;
+import data.MarvelCharacter;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -18,10 +18,10 @@ public class PopulateCharacterObject {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         // parse json for character data
         System.out.println("parse json from marvel api");
-        Character c = ExtractDataFromJson.parseJson(CAPTAIN_AMERICA);
+        MarvelCharacter mc = ExtractDataFromJson.parseJson(CAPTAIN_AMERICA);
         // scrape html for character data
         System.out.println("scrape marvel html pages");
-        ScrapeCharacterWikiPage.scrapeCharacterWikiHtml(c);
-        System.out.println(c);
+        ScrapeCharacterWikiPage.scrapeCharacterWikiHtml(mc);
+        System.out.println(mc);
     }
 }

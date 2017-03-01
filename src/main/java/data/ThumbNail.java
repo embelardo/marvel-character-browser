@@ -1,4 +1,4 @@
-package marvel;
+package data;
 
 public class ThumbNail {
     private String path;

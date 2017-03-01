@@ -1,4 +1,4 @@
-package marvel;
+package data;
 
 public class Url {
     private String type;

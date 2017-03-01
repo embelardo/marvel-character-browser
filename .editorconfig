@@ -20,3 +20,6 @@ insert_final_newline=false
 
 # denotes whether whitespace is allowed at end of lines
 trim_trailing_whitespace = true
+
+[*.{jsp,xml}]
+indent_size=2

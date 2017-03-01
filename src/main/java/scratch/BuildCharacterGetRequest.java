@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Properties;
 
 public class BuildCharacterGetRequest {
-    private static Properties props;
+    private static Properties apiKeys;
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         initProps();
@@ -19,20 +19,19 @@ public class BuildCharacterGetRequest {
         String url = "http://gateway.marvel.com/v1/public/characters?ts=%d&apikey=%s&hash=%s&nameStartsWith=%s";
         long ts = Calendar.getInstance().getTimeInMillis();
         String hash = getHash(ts);
-        System.out.println("privateKey: " + props.getProperty("key.private") + ", hash: " + hash);
-        System.out.println(String.format(url, ts, props.getProperty("key.public"), hash, searchString));
+        System.out.println("privateKey: " + apiKeys.getProperty("key.private") + ", hash: " + hash);
+        System.out.println(String.format(url, ts, apiKeys.getProperty("key.public"), hash, searchString));
     }
 
     private static void initProps() throws IOException {
-        props = new Properties();
+        apiKeys = new Properties();
         FileInputStream fis = new FileInputStream("apikeys.properties");
-        props.load(fis);
+        apiKeys.load(fis);
     }
 
     private static String getHash(long ts) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        String stringToHash = ts + props.getProperty("key.private") + props.getProperty("key.public");
+        String stringToHash = ts + apiKeys.getProperty("privateKey") + apiKeys.getProperty("publicKey");
         String hash = DigestUtils.md5Hex(stringToHash);
-        //        System.out.println("original: " + stringToHash + ", hash: " + hash);
         return hash;
     }
 }
