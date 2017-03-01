@@ -219,10 +219,11 @@ public class MarvelCharacter {
         sb.append(String.format("physicalAttributes: %s\n", physicalAttributes));
         sb.append(String.format("powers            : %s\n", powers));
         sb.append(String.format("paraphernalia     : %s\n", paraphernalia));
+        sb.append("powers            :\n");
         Iterator<String> iter = powerRatings.keySet().iterator();
         while (iter.hasNext()) {
             String power = iter.next();
-            sb.append(String.format("  %s: %s\n", power, powerRatings.get(power)));
+            sb.append(String.format("  %12s: %s\n", power, powerRatings.get(power)));
         }
         return sb.toString();
     }

@@ -25,7 +25,7 @@ public class BuildCharacterGetRequest {
 
     private static void initProps() throws IOException {
         apiKeys = new Properties();
-        FileInputStream fis = new FileInputStream("apikeys.properties");
+        FileInputStream fis = new FileInputStream("config/apikeys.properties");
         apiKeys.load(fis);
     }
 
