@@ -1,0 +1,14 @@
+body {
+    background-color: azure;
+    font-family: Sans-Serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    padding: 3px
+}
+
+tr:nth-child(even) {background-color: lightsteelblue}

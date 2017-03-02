@@ -17,9 +17,14 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.2.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.9.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.10.2" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.0" />
+        </element>
+        <element id="directory" name="views">
+          <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp/views" />
         </element>
       </element>
       <element id="directory" name="META-INF">
