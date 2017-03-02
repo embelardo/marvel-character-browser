@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 @ComponentScan(basePackages = {"beans", "web"})
 @PropertySource("classpath:/config/apikeys.properties")
+@PropertySource("classpath:/config/application.properties")
 public class MvcConfig extends WebMvcConfigurerAdapter {
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {

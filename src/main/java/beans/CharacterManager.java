@@ -18,10 +18,10 @@ import java.util.logging.Logger;
 @SuppressWarnings("unused")
 @Component
 public class CharacterManager {
-    private static final String URL_FIND_CHARACTER = "http://gateway.marvel.com/v1/public/characters?ts={ts}&apikey={apikey}&hash={hash}&nameStartsWith={searchString}";
-    private static final String URL_GET_CHARACTER = "http://gateway.marvel.com/v1/public/characters/{character}?ts={ts}&apikey={apikey}&hash={hash}";
     private Logger logger = Logger.getLogger(CharacterManager.class.getName());
     private RestTemplate restTemplate = new RestTemplate();
+    @Value("${urlFindCharacter}") private String urlFindCharacter;
+    @Value("${urlGetCharacter}") private String urlGetCharacter;
     @Value("${publicKey}") private String publicKey;
     @Value("${privateKey}") private String privateKey;
 
@@ -29,14 +29,14 @@ public class CharacterManager {
         logger.info(String.format("find character: '%s'", characterString));
         long timeStamp = Calendar.getInstance().getTimeInMillis();
         String hash = getHash(timeStamp);
-        return restTemplate.getForObject(URL_FIND_CHARACTER, String.class, timeStamp, publicKey, hash, characterString);
+        return restTemplate.getForObject(urlFindCharacter, String.class, timeStamp, publicKey, hash, characterString);
     }
 
     public MarvelCharacter getCharacter(String characterId) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         logger.info(String.format("get character: '%s'", characterId));
         long timeStamp = Calendar.getInstance().getTimeInMillis();
         String hash = getHash(timeStamp);
-        String characterAsString = restTemplate.getForObject(URL_GET_CHARACTER, String.class, characterId, timeStamp, publicKey, hash);
+        String characterAsString = restTemplate.getForObject(urlGetCharacter, String.class, characterId, timeStamp, publicKey, hash);
         JsonObject character = new JsonParser().parse(characterAsString).getAsJsonObject();
         JsonObject data = character.getAsJsonObject("data");
         JsonElement results = data.getAsJsonArray("results").get(0);
