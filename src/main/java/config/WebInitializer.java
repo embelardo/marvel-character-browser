@@ -1,11 +1,10 @@
-package web;
+package config;
 
-import config.MvcConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[0];
+        return new Class<?>[]{RootConfig.class};
     }
 
     protected Class<?>[] getServletConfigClasses() {

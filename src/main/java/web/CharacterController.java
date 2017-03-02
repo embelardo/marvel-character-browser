@@ -26,6 +26,12 @@ public class CharacterController {
         return "searchResultList";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/findjson", method = RequestMethod.GET)
+    public List<SearchResult> findCharacterJson(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        return characterManager.findCharacter(searchString);
+    }
+
     @RequestMapping(value = "/character/{characterId}", method = RequestMethod.GET)
     public String getCharacter(@PathVariable String characterId, Model model) throws IOException, NoSuchAlgorithmException {
         MarvelCharacter mc = characterManager.getCharacter(characterId);
