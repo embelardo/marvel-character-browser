@@ -1,1 +1,1 @@
-# marvel-character-browser
+# marvel-characters-web-app
