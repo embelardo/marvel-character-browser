@@ -19,6 +19,11 @@ public class CharacterController {
     @Autowired
     private CharacterManager characterManager;
 
+    @RequestMapping(value = "/")
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public String findCharacter(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         List<SearchResult> searchResultList = characterManager.findCharacter(searchString);

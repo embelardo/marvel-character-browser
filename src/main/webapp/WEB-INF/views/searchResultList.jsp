@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/application.css">
+    <link rel="stylesheet" href="/application.css" />
     <title>Marvel Character Search Results</title>
   </head>
   <body>

@@ -1,7 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
-    <link rel="stylesheet" href="application.css">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/application.css" />
     <title>Marvel Character Browser</title>
   </head>
   <body>

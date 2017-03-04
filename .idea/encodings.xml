@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/config/apikeys.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/config/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system.properties" charset="UTF-8" />
   </component>
 </project>
