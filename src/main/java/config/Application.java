@@ -23,7 +23,7 @@ import java.util.Arrays;
 @EnableWebMvc
 @SpringBootApplication
 @ComponentScan(basePackages = {"beans", "web"})
-@PropertySource("classpath:/config/apikeys.properties")
+@PropertySource(value = "classpath:/config/apikeys.properties", ignoreResourceNotFound = true)
 @PropertySource("classpath:/config/application.properties")
 public class Application extends WebMvcConfigurerAdapter {
     public static void main(String[] args) {
