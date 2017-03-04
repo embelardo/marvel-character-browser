@@ -1,1 +1,1 @@
-web: java -jar target\marvel-character-web-app-1.0-SNAPSHOT.war
+web: java -jar target/marvel-character-web-app-1.0-SNAPSHOT.war
