@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/marvel-character-web-app-1.0-SNAPSHOT.war
