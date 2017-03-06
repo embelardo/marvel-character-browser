@@ -1,7 +1,7 @@
 package scratch;
 
 import com.google.gson.*;
-import data.MarvelCharacter;
+import comics.character.Character;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,11 +17,11 @@ public class ExtractDataFromJson {
     private static RestTemplate restTemplate = new RestTemplate();
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
-        MarvelCharacter c = parseJson(PopulateCharacterObject.SPIDER_MAN);
+        Character c = parseJson(PopulateCharacterObject.SPIDER_MAN);
         System.out.println(c);
     }
 
-    public static MarvelCharacter parseJson(String characterId) throws IOException, NoSuchAlgorithmException {
+    public static Character parseJson(String characterId) throws IOException, NoSuchAlgorithmException {
         initProps();
         String url = "http://gateway.marvel.com/v1/public/characters/{character}?ts={ts}&apikey={apikey}&hash={hash}";
         long ts = Calendar.getInstance().getTimeInMillis();
@@ -30,7 +30,7 @@ public class ExtractDataFromJson {
         JsonObject character = new JsonParser().parse(characterAsString).getAsJsonObject();
         JsonObject data = character.getAsJsonObject("data");
         JsonElement results = data.getAsJsonArray("results").get(0);
-        MarvelCharacter mc = new Gson().fromJson(results.getAsJsonObject(), MarvelCharacter.class);
+        Character mc = new Gson().fromJson(results.getAsJsonObject(), Character.class);
         return mc;
     }
 

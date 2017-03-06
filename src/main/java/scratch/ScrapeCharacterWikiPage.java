@@ -1,6 +1,6 @@
 package scratch;
 
-import data.MarvelCharacter;
+import comics.character.Character;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ScrapeCharacterWikiPage {
     public static void main(String[] args) throws IOException {}
 
-    public static void scrapeCharacterWikiHtml(MarvelCharacter mc) throws IOException {
+    public static void scrapeCharacterWikiHtml(Character mc) throws IOException {
         String characterUrl = mc.getWikiUrl();
         if (characterUrl == null) {
             return;

@@ -18,14 +18,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 @Configuration
 @EnableWebMvc
 @SpringBootApplication
-@ComponentScan(basePackages = {"application", "web"})
+@ComponentScan(basePackages = {"comics.character"})
 @PropertySource(value = "classpath:/config/apikeys.properties", ignoreResourceNotFound = true)
 @PropertySource("classpath:/config/application.properties")
 public class Application extends WebMvcConfigurerAdapter {
+    private Logger logger = Logger.getLogger(Application.class.getName());
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -36,14 +39,13 @@ public class Application extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+    public CommandLineRunner commandLineRunner(ApplicationContext context) {
         return args -> {
-            System.out.println("Let's inspect the application provided by Spring Boot:");
-
-            String[] beanNames = ctx.getBeanDefinitionNames();
+            logger.info("List beans provided by this Spring Boot application:");
+            String[] beanNames = context.getBeanDefinitionNames();
             Arrays.sort(beanNames);
             for (String beanName : beanNames) {
-                System.out.println(beanName);
+                logger.info(beanName);
             }
         };
     }

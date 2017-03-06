@@ -1,7 +1,6 @@
-package application;
+package comics.character;
 
 import com.google.gson.*;
-import data.MarvelCharacter;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.*;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -21,15 +21,15 @@ import java.util.logging.Logger;
 
 @SuppressWarnings("unused")
 @Component
-public class CharacterManager {
-    private Logger logger = Logger.getLogger(CharacterManager.class.getName());
+public class RestCharacterRepository implements CharacterRepository {
+    private Logger logger = Logger.getLogger(RestCharacterRepository.class.getName());
     private RestTemplate restTemplate = new RestTemplate();
     @Value("${urlFindCharacter}") private String urlFindCharacter;
     @Value("${urlGetCharacter}") private String urlGetCharacter;
     @Value("${publicKey}") private String publicKey;
     @Value("${privateKey}") private String privateKey;
 
-    public List<MarvelCharacter> findCharacter(String characterString) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public List<Character> findCharacter(String characterString) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         logger.info(String.format("find character: '%s'", characterString));
         long timeStamp = Calendar.getInstance().getTimeInMillis();
         String hash = getHash(timeStamp);
@@ -38,33 +38,33 @@ public class CharacterManager {
         JsonObject data = characters.getAsJsonObject("data");
         JsonArray results = data.getAsJsonArray("results");
         Gson gson = new Gson();
-        List<MarvelCharacter> characterResults = new ArrayList<>();
+        List<Character> characterResults = new ArrayList<>();
         for (JsonElement e : results) {
-            characterResults.add(gson.fromJson(e, MarvelCharacter.class));
+            characterResults.add(gson.fromJson(e, Character.class));
         }
         return characterResults;
     }
 
-    public MarvelCharacter getCharacter(String characterId) throws IOException, NoSuchAlgorithmException {
+    public Character getCharacter(String characterId) throws IOException, NoSuchAlgorithmException {
         logger.info(String.format("get character: '%s'", characterId));
-        MarvelCharacter mc = parseCharacterJson(characterId);
+        Character mc = parseCharacterJson(characterId);
         scrapeCharacterWikiHtml(mc);
         logger.info(mc.toString());
         return mc;
     }
 
-    public MarvelCharacter parseCharacterJson(String characterId) throws IOException, NoSuchAlgorithmException {
+    public Character parseCharacterJson(String characterId) throws IOException, NoSuchAlgorithmException {
         long timeStamp = Calendar.getInstance().getTimeInMillis();
         String hash = getHash(timeStamp);
         String characterAsString = restTemplate.getForObject(urlGetCharacter, String.class, characterId, timeStamp, publicKey, hash);
         JsonObject character = new JsonParser().parse(characterAsString).getAsJsonObject();
         JsonObject data = character.getAsJsonObject("data");
         JsonElement results = data.getAsJsonArray("results").get(0);
-        return new Gson().fromJson(results.getAsJsonObject(), MarvelCharacter.class);
+        return new Gson().fromJson(results.getAsJsonObject(), Character.class);
     }
 
     @SuppressWarnings("Duplicates")
-    public void scrapeCharacterWikiHtml(MarvelCharacter mc) throws IOException {
+    public void scrapeCharacterWikiHtml(Character mc) throws IOException {
         String characterUrl = mc.getWikiUrl();
         if (characterUrl == null) {
             return;

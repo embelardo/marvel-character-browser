@@ -1,7 +1,7 @@
-package web;
+package comics.character.web;
 
-import application.CharacterManager;
-import data.MarvelCharacter;
+import comics.character.Character;
+import comics.character.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.util.List;
 @Controller
 public class CharacterController {
     @Autowired
-    private CharacterManager characterManager;
+    private CharacterRepository characterManager;
 
     @RequestMapping(value = "/")
     public String index() {
@@ -25,27 +25,27 @@ public class CharacterController {
 
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public String findCharacter(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        List<MarvelCharacter> searchResultList = characterManager.findCharacter(searchString);
+        List<Character> searchResultList = characterManager.findCharacter(searchString);
         model.addAttribute("searchResultList", searchResultList);
         return "searchResultList";
     }
 
     @ResponseBody
     @RequestMapping(value = "/findjson", method = RequestMethod.GET)
-    public List<MarvelCharacter> findCharacterJson(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public List<Character> findCharacterJson(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         return characterManager.findCharacter(searchString);
     }
 
     @RequestMapping(value = "/character/{characterId}", method = RequestMethod.GET)
     public String getCharacter(@PathVariable String characterId, Model model) throws IOException, NoSuchAlgorithmException {
-        MarvelCharacter mc = characterManager.getCharacter(characterId);
+        Character mc = characterManager.getCharacter(characterId);
         model.addAttribute("marvelCharacter", mc);
         return "characterDetail";
     }
 
     @ResponseBody
     @RequestMapping(value = "/characterjson/{characterId}", method = RequestMethod.GET)
-    public MarvelCharacter getCharacterJson(@PathVariable String characterId, Model model) throws IOException, NoSuchAlgorithmException {
+    public Character getCharacterJson(@PathVariable String characterId, Model model) throws IOException, NoSuchAlgorithmException {
         return characterManager.getCharacter(characterId);
     }
 }
