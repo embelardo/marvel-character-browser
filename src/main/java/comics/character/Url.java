@@ -1,5 +1,8 @@
 package comics.character;
 
+/**
+ * The representation of a Marvel url path.
+ */
 public class Url {
     private String type;
     private String url;

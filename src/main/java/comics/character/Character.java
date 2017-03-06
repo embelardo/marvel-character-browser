@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The Marvel character domain object.
+ */
 public class Character {
     private int id;
     private String name;

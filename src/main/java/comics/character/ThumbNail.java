@@ -1,5 +1,8 @@
 package comics.character;
 
+/**
+ * Marvel character details include the URL path to a thumbnail picture.
+ */
 public class ThumbNail {
     private String path;
     private String extension;

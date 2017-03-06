@@ -1,39 +1,53 @@
 package comics.character;
 
 import com.google.gson.*;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.lang.*;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
 
 @SuppressWarnings("unused")
 @Component
 public class RestCharacterRepository implements CharacterRepository {
-    private Logger logger = Logger.getLogger(RestCharacterRepository.class.getName());
-    private RestTemplate restTemplate = new RestTemplate();
-    @Value("${urlFindCharacter}") private String urlFindCharacter;
-    @Value("${urlGetCharacter}") private String urlGetCharacter;
-    @Value("${publicKey}") private String publicKey;
-    @Value("${privateKey}") private String privateKey;
+    private static final Logger logger = Logger.getLogger(RestCharacterRepository.class.getName());
+    private String urlFindCharacter;
+    private String urlGetCharacter;
+    private RestTemplate restTemplate;
+    private Hasher hasher;
+    private String publicKey;
+    private String privateKey;
+
+    @Autowired
+    public RestCharacterRepository(RestTemplate restTemplate, Hasher hasher,
+                                   @Value("${urlFindCharacter}") String urlFindCharacter,
+                                   @Value("${urlGetCharacter}") String urlGetCharacter,
+                                   @Value("${publicKey}") String publicKey,
+                                   @Value("${privateKey}") String privateKey) {
+        this.restTemplate = restTemplate;
+        this.hasher = hasher;
+        this.urlFindCharacter = urlFindCharacter;
+        this.urlGetCharacter = urlGetCharacter;
+        this.publicKey = publicKey;
+        this.privateKey = privateKey;
+    }
 
     public List<Character> findCharacter(String characterString) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         logger.info(String.format("find character: '%s'", characterString));
-        long timeStamp = Calendar.getInstance().getTimeInMillis();
-        String hash = getHash(timeStamp);
-        String charactersAsString = restTemplate.getForObject(urlFindCharacter, String.class, timeStamp, publicKey, hash, characterString);
+        long timeStamp = hasher.getTimeStamp();
+        String hash = hasher.getHash(timeStamp);
+        String charactersAsString = restTemplate.getForObject(urlFindCharacter, String.class, timeStamp, publicKey,
+            hash, characterString);
         JsonObject characters = new JsonParser().parse(charactersAsString).getAsJsonObject();
         JsonObject data = characters.getAsJsonObject("data");
         JsonArray results = data.getAsJsonArray("results");
@@ -54,9 +68,10 @@ public class RestCharacterRepository implements CharacterRepository {
     }
 
     public Character parseCharacterJson(String characterId) throws IOException, NoSuchAlgorithmException {
-        long timeStamp = Calendar.getInstance().getTimeInMillis();
-        String hash = getHash(timeStamp);
-        String characterAsString = restTemplate.getForObject(urlGetCharacter, String.class, characterId, timeStamp, publicKey, hash);
+        long timeStamp = hasher.getTimeStamp();
+        String hash = hasher.getHash(timeStamp);
+        String characterAsString = restTemplate.getForObject(urlGetCharacter, String.class, characterId, timeStamp,
+            publicKey, hash);
         JsonObject character = new JsonParser().parse(characterAsString).getAsJsonObject();
         JsonObject data = character.getAsJsonObject("data");
         JsonElement results = data.getAsJsonArray("results").get(0);
@@ -145,10 +160,5 @@ public class RestCharacterRepository implements CharacterRepository {
 
             mc.getPowerRatings().put(power, rating);
         }
-    }
-
-    private String getHash(long timeStamp) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        String stringToHash = timeStamp + privateKey + publicKey;
-        return DigestUtils.md5Hex(stringToHash);
     }
 }

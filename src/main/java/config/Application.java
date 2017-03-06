@@ -1,15 +1,15 @@
 package config;
 
+import comics.character.Hasher;
+import comics.character.Md5Hasher;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -17,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.Logger;
 
@@ -24,8 +25,7 @@ import java.util.logging.Logger;
 @EnableWebMvc
 @SpringBootApplication
 @ComponentScan(basePackages = {"comics.character"})
-@PropertySource(value = "classpath:/config/apikeys.properties", ignoreResourceNotFound = true)
-@PropertySource("classpath:/config/application.properties")
+@Import({LiveConfig.class, TestConfig.class})
 public class Application extends WebMvcConfigurerAdapter {
     private Logger logger = Logger.getLogger(Application.class.getName());
 
@@ -51,6 +51,12 @@ public class Application extends WebMvcConfigurerAdapter {
     }
 
     @Bean
+    public Hasher hasher() { return new Md5Hasher(); }
+
+    @Bean
+    public RestTemplate restTemplate() { return new RestTemplate(); }
+
+    @Bean
     public DispatcherServlet dispatcherServlet() {
         return new DispatcherServlet();
     }
@@ -63,7 +69,7 @@ public class Application extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() throws IOException {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
