@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * The REST DAO that handles all communications with the Marvel REST API.
+ */
 @SuppressWarnings("unused")
 @Component
 public class RestCharacterRepository implements CharacterRepository {
