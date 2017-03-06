@@ -1,4 +1,4 @@
-# marvel-characters-web-app
+# marvel-character-web-app
 
 A Spring MVC web application that allows a user to search for characters from the Marvel Universe and get detailed information about them.
 
