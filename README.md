@@ -10,7 +10,7 @@ https://marvel-character-browser.herokuapp.com/
 
 This web application is implemented as a Spring Boot MVC project.
 
-It acquires all its information from the [Marvel API](http://developer.marvel.com/docs). Unfortunately, most character details are buried in a wiki page. Therefore, character data is aggregated by first parsing the json data returned by the Marvel API, and then scraping the specified wiki page for the rest of the data.
+It acquires all its information from the [Marvel API](http://developer.marvel.com/docs). Unfortunately, most character details are buried in a wiki page. Therefore, character data is aggregated by first parsing the JSON data returned by the Marvel API, and then scraping the specified wiki page for the rest of the data.
 
 ### screenshots
 
