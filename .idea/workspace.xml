@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e34a4330-069d-4194-b1cc-d2ebd309ea47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/comics/character/RestCharacterRepository.java" afterPath="$PROJECT_DIR$/src/main/java/comics/character/RestCharacterRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java" afterPath="$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,89 +33,20 @@
     <favorites_list name="marvel-characters" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/config/Application.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="607">
-                  <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TestHasher.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/comics/character/TestHasher.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="48">
-                  <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-                  <folding>
-                    <element signature="e#182#183#0" expanded="true" />
-                    <element signature="e#219#220#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RestCharacterRepositoryTests.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="703">
-                  <caret line="75" column="40" lean-forward="false" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RestCharacterRepository.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/comics/character/RestCharacterRepository.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CharacterRepository.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/comics/character/CharacterRepository.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="9" column="76" lean-forward="false" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="CharacterRepository.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/comics/character/CharacterRepository.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="9" column="76" lean-forward="false" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="RestCharacterRepositoryTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="53" column="83" lean-forward="true" selection-start-line="53" selection-start-column="83" selection-end-line="53" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -202,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/main/java/comics/character/ThumbNail.java" />
         <option value="$PROJECT_DIR$/src/main/java/comics/character/Url.java" />
         <option value="$PROJECT_DIR$/src/test/java/comics/character/TestHasher.java" />
-        <option value="$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/comics/character/RestCharacterRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java" />
       </list>
     </option>
   </component>
@@ -230,7 +161,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-3" />
     <option name="width" value="1926" />
-    <option name="height" value="1170" />
+    <option name="height" value="1105" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -260,49 +191,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marvel-characters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="marvel-character-web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marvel-characters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marvel-character-web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marvel-characters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marvel-character-web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1216,7 +1105,7 @@
       <workItem from="1488645372369" duration="68000" />
       <workItem from="1488645573939" duration="76000" />
       <workItem from="1488646640804" duration="6757000" />
-      <workItem from="1488801238298" duration="34735000" />
+      <workItem from="1488801238298" duration="36265000" />
     </task>
     <servers />
   </component>
@@ -1253,7 +1142,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120896000" />
+    <option name="totallyTimeSpent" value="122426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1265,7 +1154,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1926" height="1170" extended-state="6" />
+    <frame x="-3" y="0" width="1926" height="1105" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1291,7 +1180,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46554935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33891994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33891994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24479167" sideWeight="0.49460918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5053908" order="6" side_tool="true" content_ui="tabs" />
@@ -1680,16 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="75" column="40" lean-forward="false" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/comics/character/CharacterRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1702,8 +1581,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/comics/character/RestCharacterRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="-1168">
           <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/comics/character/RestCharacterRepositoryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="53" column="83" lean-forward="true" selection-start-line="53" selection-start-column="83" selection-end-line="53" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

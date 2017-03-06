@@ -67,6 +67,7 @@ public class RestCharacterRepositoryTests {
             andRespond(withSuccess(searchResultsAsJson, MediaType.APPLICATION_JSON));
         List<Character> searchResults = repository.findCharacter(searchString);
 
+        restService.verify();
         org.junit.Assert.assertNotNull("results should not be null", searchResults);
         org.junit.Assert.assertEquals("number of results should be 20", 20, searchResults.size());
         org.junit.Assert.assertEquals("first result should be Spider-dok (id=1010727)", 1010727,
