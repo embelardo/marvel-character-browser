@@ -1,8 +1,7 @@
 package web;
 
-import beans.CharacterManager;
+import application.CharacterManager;
 import data.MarvelCharacter;
-import data.SearchResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,14 +25,14 @@ public class CharacterController {
 
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public String findCharacter(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        List<SearchResult> searchResultList = characterManager.findCharacter(searchString);
+        List<MarvelCharacter> searchResultList = characterManager.findCharacter(searchString);
         model.addAttribute("searchResultList", searchResultList);
         return "searchResultList";
     }
 
     @ResponseBody
     @RequestMapping(value = "/findjson", method = RequestMethod.GET)
-    public List<SearchResult> findCharacterJson(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public List<MarvelCharacter> findCharacterJson(@RequestParam String searchString, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         return characterManager.findCharacter(searchString);
     }
 
