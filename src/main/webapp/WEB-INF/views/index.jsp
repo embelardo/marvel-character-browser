@@ -23,11 +23,11 @@
           </td>
           <td align="center">
             <a href="/marvel/character/1009189"><img src="http://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b/portrait_medium.jpg"></a><br/>
-            <a href="/marvel/character/1009189">Falcon</a>
+            <a href="/marvel/character/1009189">Black Widow</a>
           </td>
           <td align="center">
             <a href="/marvel/character/1009220"><img src="http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087/portrait_medium.jpg"></a><br/>
-            <a href="/marvel/character/1009220">Falcon</a>
+            <a href="/marvel/character/1009220">Captain America</a>
           </td>
           <td align="center">
             <a href="/marvel/character/1009297"><img src="http://i.annihil.us/u/prod/marvel/i/mg/f/b0/5111505fb7009/portrait_medium.jpg"></a><br/>
