@@ -1,4 +1,4 @@
-# marvel-character-web-app
+# marvel-character-browser
 
 A web application that allows a user to search for characters from the Marvel Universe and get detailed information about them.
 
