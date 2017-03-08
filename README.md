@@ -12,9 +12,9 @@ This web application is implemented as a Spring Boot MVC project.
 
 It acquires all its information from the [Marvel API](http://developer.marvel.com/docs). Unfortunately, most character details are buried in a wiki page. Therefore, character data is aggregated by first parsing the JSON data returned by the Marvel API, and then scraping the specified wiki page for the rest of the data.
 
-The Gson library is used to serialize and deserialize Java objects to and from JSON.
+The [google-gson](https://github.com/google/gson) library is used to serialize and deserialize Java objects to and from JSON.
 
-The jsoup library is used to extract data from HTML.
+The [jsoup](https://jsoup.org/) library is used to extract data from HTML.
 
 ### screenshots
 
