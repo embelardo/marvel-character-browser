@@ -65,6 +65,7 @@
           <input type="text" name="searchString" value="" autofocus="true" size="25"/>
           <input type="submit" value="Search">
         </form>
+        <a href="https://github.com/embelardo/marvel-character-browser">Source code on GitHub</a><br/>
         Data provided by Marvel. &copy; 2017 Marvel
       </div>
     </div>
